@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  max-width: 280px;
+  gap: 32px;
+}
+
+.chart-box {
+  width: 280px;
+}
