@@ -4,7 +4,7 @@ import "./App.css"
 import { SunTracker } from "./components/Tracker"
 
 function App() {
-  const [percentage, setPercentage] = useState(70)
+  const [percentage, setPercentage] = useState(50)
 
   const handleSlider = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value: number = parseInt(event.target.value)
