@@ -1,7 +1,11 @@
-<h1 align="center">SVG Donut chart Generator</h1>
+<h1 align="center">SVG Sun Tracker Generator</h1>
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
+
+## Deploy
+
+Veja o deploy [clicando aqui](https://svg-sun-tracking.vercel.app/)
 
 ## Descrição
 
