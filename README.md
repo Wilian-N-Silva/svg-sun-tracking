@@ -13,14 +13,17 @@ Este é um pequeno projeto que fiz para tentar entender melhor o SVG e como mani
 
 Este projeto tem como base um projeto anterior que intitulei de [SVG Donut Generator](https://github.com/Wilian-N-Silva/svg-donut-generator) que por sua vez, foi feito baseado no post do [Sergio Pedercini](https://medium.com/@pppped) feito no medium onde ele ensina como calcular e montar todo o SVG.
 
-### Calculos realizados para criar a forma
+## Agradecimentos
+
+Agradecimento ao [Paulo Henrique Lemos](https://github.com/paulohenriquelemos) que me ajudou a realizar o ajuste de compensação e descobrir o problema do background em relação ao Sol!
+
+## Calculos realizados para criar a forma
 
 ```javascript
 const sqrBox = 36
-const circumference = 100
 
-// radius = circumference / 2π
-const radius = circumference / (Math.PI * 2)
+// radius = boxSize / 2
+const radius = sqrBox / 2
 
 // diameter = radius *2
 const diameter = radius * 2
@@ -32,15 +35,12 @@ const xPos = sqrBox / 2
 const yPos = (sqrBox - diameter) / 2
 ```
 
-### Cálculos realizados para mover o sol
+### Cálculos realizados para mover o sol (Obrigado [Paulo Henrique Lemos](https://github.com/paulohenriquelemos)!)
 
 ```javascript
-    // Setting initial position (yeap inverted... It's a temporary measure)
-    cx={yPos}
-    cy={xPos}
-
-    // Setting Angle and setting the center of rotation (x or sqrBox / 2)
-     transform={`rotate(${180 * (percentage / 100)} ${xPos} ${xPos})`}
+const adjacent = 2 * (50 - percentage)
+const radians = Math.acos(adjacent / 100)
+const degrees = radians * (180 / Math.PI)
 ```
 
 ## Referência

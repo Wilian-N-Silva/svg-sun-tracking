@@ -33,6 +33,9 @@ function App() {
         />
         <span>{percentage}%</span>
       </div>
+      <a href="https://github.com/Wilian-N-Silva/svg-sun-tracking">
+        Repositório
+      </a>
     </div>
   )
 }

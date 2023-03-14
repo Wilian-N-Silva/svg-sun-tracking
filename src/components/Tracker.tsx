@@ -3,14 +3,20 @@ interface SunTrackerProp {
 }
 export function SunTracker({ percentage }: SunTrackerProp) {
   const sqrBox = 36
-  const circumference = 100
-  const radius = circumference / (Math.PI * 2) // 15.915494309189533
-  const diameter = radius * 2 // 31.830988618379067
-  const xPos = sqrBox / 2 // 18
-  const yPos = (sqrBox - diameter) / 2 // 2.0845056908
+  const radius = sqrBox / 2
+  const diameter = radius * 2
+  const xPos = sqrBox / 2
+  const yPos = (sqrBox - diameter) / 2
+
+  const adjacent = 2 * (50 - percentage)
+  const radians = Math.acos(adjacent / 100)
+  const degrees = radians * (180 / Math.PI)
 
   const svg = (
-    <svg viewBox="0 0 36 36">
+    <svg
+      viewBox={`0 0 ${sqrBox} ${sqrBox / 2}`}
+      style={{ overflow: "visible" }}
+    >
       <linearGradient
         id="donutGradient"
         gradientUnits="userSpaceOnUse"
@@ -23,8 +29,8 @@ export function SunTracker({ percentage }: SunTrackerProp) {
         <rect
           x="0"
           y="0"
-          width={sqrBox * (percentage / 100)}
-          height="100"
+          width={(sqrBox * percentage) / 100}
+          height={sqrBox / 2}
           fill="white"
         />
       </mask>
@@ -46,7 +52,7 @@ export function SunTracker({ percentage }: SunTrackerProp) {
         cx={yPos}
         cy={xPos}
         r="1"
-        transform={`rotate(${180 * (percentage / 100)} ${xPos} ${xPos})`}
+        transform={`rotate(${degrees} ${xPos} ${xPos})`}
         fill="#F6C833"
       ></circle>
     </svg>

@@ -10,3 +10,20 @@
 .chart-box {
   width: 280px;
 }
+
+a,
+button {
+  align-self: center;
+  padding: 8px 12px;
+  border: 1px solid #363447;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.87);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+a:hover,
+button:hover {
+  transform: Scale(1.1);
+}
