@@ -52,9 +52,30 @@ export function SunTracker({ percentage }: SunTrackerProp) {
         cx={yPos}
         cy={xPos}
         r="1"
-        transform={`rotate(${degrees} ${xPos} ${xPos})`}
+        style={{
+          transform: `rotate(${degrees}deg)`,
+          transformOrigin: `${xPos}px ${xPos}px`,
+        }}
         fill="#F6C833"
-      ></circle>
+      />
+      <line
+        opacity="0.4"
+        x1="-0.5"
+        y1="18"
+        x2="36.5"
+        y2="18"
+        strokeWidth={0.2}
+        stroke="#f6c833"
+      />
+      <line x1="0" y1="17" x2="0" y2="19" strokeWidth={0.4} stroke="#f6c833" />
+      <line
+        x1="36"
+        y1="17"
+        x2="36"
+        y2="19"
+        strokeWidth={0.4}
+        stroke="#f6c833"
+      />
     </svg>
   )
   return <div>{svg}</div>
