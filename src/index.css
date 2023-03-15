@@ -21,8 +21,8 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
-  padding: 32px 0 64px;
+  height: 100vh;
+  /* padding: 32px 0 64px; */
 }
 
 #root {
